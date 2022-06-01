@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const OrkTown = await hre.ethers.getContractFactory("OrkTown");
-  const orkTown = await OrkTown.deploy(999, "https://gateway.pinata.cloud/ipfs/QmdD8sHh9bDX2RjVt5VTiM52zxkrWT91ycU544orFLhwN9/",10,10000);
+  const orkTown = await OrkTown.deploy(999, "https://gateway.pinata.cloud/ipfs/QmdD8sHh9bDX2RjVt5VTiM52zxkrWT91ycU544orFLhwN9/",10,10000, "https://gateway.pinata.cloud/ipfs/QmXPiZArsZ5DMX9MFGFna43aNpz3MgL5Uwenf1hn8tCVwt");
 
   await orkTown.deployed();
 

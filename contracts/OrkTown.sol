@@ -11,12 +11,15 @@ contract OrkTown is ERC721A, ERC2981, Ownable {
     string public collectionURI;
     uint96 public maxMint;
     uint256 public maxSupply;
+    string private OpenseaContractURI;
 
-    constructor(uint96 _royaltyFeesInBips, string memory _contractURI, uint96 _maxMint, uint256 _maxSupply) ERC721A("Orks", "ORK") {
+    constructor(uint96 _royaltyFeesInBips, string memory _contractURI, uint96 _maxMint, uint256 _maxSupply, string memory _openseaContractURI) ERC721A("Orks", "ORK") {
         setRoyaltyInfo(msg.sender, _royaltyFeesInBips);
         collectionURI = _contractURI;
         maxMint = _maxMint;
         maxSupply = _maxSupply;
+        OpenseaContractURI = _openseaContractURI;
+
     }
 
     function mint (uint256 quantity) external payable {
@@ -57,7 +60,7 @@ contract OrkTown is ERC721A, ERC2981, Ownable {
     }
 
     function contractURI() public view returns (string memory) {
-        return "https://gateway.pinata.cloud/ipfs/QmXPiZArsZ5DMX9MFGFna43aNpz3MgL5Uwenf1hn8tCVwt";
+        return OpenseaContractURI;
     }
 
 
