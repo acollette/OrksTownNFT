@@ -1,7 +1,7 @@
 module.exports = [
     999, 
-    "https://gateway.pinata.cloud/ipfs/QmdD8sHh9bDX2RjVt5VTiM52zxkrWT91ycU544orFLhwN9/",
-    10,
+    2,
     10000,
-    "https://gateway.pinata.cloud/ipfs/QmXPiZArsZ5DMX9MFGFna43aNpz3MgL5Uwenf1hn8tCVwt",
+    "https://gateway.pinata.cloud/ipfs/QmPMrQhx5Sit4cuA7YECP2J7A7WpBqdVoooeJx7rTbcoPj",
+    "https://gateway.pinata.cloud/ipfs/QmPebTLfD4LZCqgfkbx2VWfXo1wZpJM854yRShx1338Stx",
 ]

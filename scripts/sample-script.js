@@ -14,8 +14,8 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const OrkTown = await hre.ethers.getContractFactory("OrkTown");
-  const orkTown = await OrkTown.deploy(999, "https://gateway.pinata.cloud/ipfs/QmdD8sHh9bDX2RjVt5VTiM52zxkrWT91ycU544orFLhwN9/",10,10000, "https://gateway.pinata.cloud/ipfs/QmXPiZArsZ5DMX9MFGFna43aNpz3MgL5Uwenf1hn8tCVwt");
+  const OrkTown = await hre.ethers.getContractFactory("dyorktown");
+  const orkTown = await OrkTown.deploy(999,2,10000, "https://gateway.pinata.cloud/ipfs/QmPMrQhx5Sit4cuA7YECP2J7A7WpBqdVoooeJx7rTbcoPj", "https://gateway.pinata.cloud/ipfs/QmPebTLfD4LZCqgfkbx2VWfXo1wZpJM854yRShx1338Stx");
 
   await orkTown.deployed();
 
