@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require('dotenv').config();
-require("@nomiclabs/hardhat-etherscan")
+require("@nomiclabs/hardhat-etherscan");
+require("hardhat-gas-reporter");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -33,10 +34,20 @@ module.exports = {
       url: process.env.ALCHEMY_POLYGON_URL,
       accounts: [process.env.PRIVATE_KEY],
       gas: "auto",
+    },
+    mainnet:{
+      url: process.env.ALCHEMY_URL,
+      accounts: [process.env.PRIVATE_KEY],
+      gas: "auto",
     }
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API,
     //apiKey: process.env.POLYGONSCAN_API,
+  },
+  gasReporter:{
+    enabled: true,
+    currency: "ETH",
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY
   }
 };

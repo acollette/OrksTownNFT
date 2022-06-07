@@ -14,6 +14,7 @@ contract dyorktown is ERC721A, ERC2981, Ownable {
     string private OpenseaContractURI;
     bool private revealed = false;
     string private revealUrl;
+    bool private mintOpen = false;
 
 
     constructor(uint96 _royaltyFeesInBips, uint96 _maxMint, uint256 _maxSupply, string memory _openseaContractURI, string memory _revealUrl) ERC721A("dyorktown.wtf", "DYOR") {
@@ -26,6 +27,7 @@ contract dyorktown is ERC721A, ERC2981, Ownable {
     }
 
     function mint (uint256 quantity) external {
+        require(mintOpen == true, "Mint not live yet");
         require(quantity <= maxMint, "Max amount per mint exceeded");
         require((totalSupply() + quantity) <= maxSupply );
         _safeMint(msg.sender, quantity);
@@ -47,8 +49,7 @@ contract dyorktown is ERC721A, ERC2981, Ownable {
             return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, _toString(tokenId),".json")) : '';
         } else {
             return revealUrl;
-        }
-        
+        }   
     }
 
     function supportsInterface (bytes4 interfaceId) public view override (ERC721A, ERC2981) returns (bool){
@@ -80,6 +81,15 @@ contract dyorktown is ERC721A, ERC2981, Ownable {
     function initMint (uint256 quantity) external onlyOwner {
         require((totalSupply() + quantity) <= maxSupply );
         _safeMint(msg.sender, quantity);
+    }
+
+    function toggleMintOpen() external onlyOwner {
+        if(mintOpen == false){
+            mintOpen = true;
+        }
+        else{
+            mintOpen = false;
+        }
     }
 
 }
