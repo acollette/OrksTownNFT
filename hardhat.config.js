@@ -25,11 +25,11 @@ module.exports = {
     fork: {
       url: "http://127.0.0.1:8545",
     },
-    rinkeby: {
-      url: process.env.ALCHEMY_URL,
-      accounts: [process.env.PRIVATE_KEY],
-      gas: "auto",
-    },
+    //rinkeby: {
+      //url: process.env.ALCHEMY_URL,
+      //accounts: [process.env.PRIVATE_KEY],
+      //gas: "auto",
+    //},
     matic:{
       url: process.env.ALCHEMY_POLYGON_URL,
       accounts: [process.env.PRIVATE_KEY],
@@ -38,7 +38,6 @@ module.exports = {
     mainnet:{
       url: process.env.ALCHEMY_URL,
       accounts: [process.env.PRIVATE_KEY],
-      gas: "auto",
     }
   },
   etherscan: {
