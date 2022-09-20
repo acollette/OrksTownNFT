@@ -38,11 +38,15 @@ module.exports = {
     mainnet:{
       url: process.env.ALCHEMY_URL,
       accounts: [process.env.PRIVATE_KEY],
+    },
+    mumbai:{
+      url: process.env.ALCHEMY_MUMBAI,
+      accounts: [process.env.PRIVATE_KEY],
     }
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API,
-    //apiKey: process.env.POLYGONSCAN_API,
+    //apiKey: process.env.ETHERSCAN_API,
+    apiKey: process.env.POLYGONSCAN_API,
   },
   gasReporter:{
     enabled: true,
