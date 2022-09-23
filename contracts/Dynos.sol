@@ -3,14 +3,13 @@ pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
 import "erc721a/contracts/ERC721A.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NearFrensNFT is ERC721A, Ownable {
+contract Dynos is ERC721A, Ownable {
 
     string public collectionURI;
 
-    constructor() ERC721A("NearFrens", "FRENS") {
+    constructor() ERC721A("AngryDynos", "DYNO") {
         _safeMint(msg.sender, 20);
     }
 
